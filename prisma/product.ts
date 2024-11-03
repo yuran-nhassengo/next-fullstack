@@ -24,3 +24,19 @@ export const createProduct = async (
     return product;
 
 }
+
+export const getAllProduct = async () =>{
+
+    const products = await prisma.product.findMany({
+        orderBy: {
+               
+            price: "desc"
+        }
+
+    });
+
+    return products;
+
+}
+
+
